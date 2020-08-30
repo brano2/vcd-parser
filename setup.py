@@ -8,5 +8,5 @@ setup(name='vcd_parser',
       author_email='b.pilnan@gmail.com',
     #   license='MIT',
       packages=find_packages(),
-      install_requires=['python-dateutil'],
+      install_requires=['python-dateutil', 'pytest'],
       zip_safe=False)
