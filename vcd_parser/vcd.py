@@ -1,12 +1,8 @@
-from collections import namedtuple
-from datetime import datetime
 from pathlib import Path
 from typing import Callable, ClassVar, Dict, List, Union
 from warnings import warn
 
 from dateutil.parser import parse as parse_datetime
-
-from .variable import VcdVariable
 
 class VcdSyntaxError(Exception):
     pass
@@ -112,8 +108,6 @@ class VCD:
                      'tri', 'triand', 'trior', 'trireg', 'tri0', 'tri1', 'wand', 'wire', 'wor']
         if tokens[0] not in VAR_TYPES:
             warn(f"Unknown variable type '{tokens[0]}'. Should be one of: {VAR_TYPES}")
-        # self._vars[tokens[2]] = VcdVariable(self._current_scope_type, self._current_scope,
-        #                                     tokens[0], int(tokens[1]), tokens[2], tokens[3])
         self.vars[tokens[2]] = dict(scope_type=self._current_scope_type,
                                      scope=self._current_scope,
                                      type=tokens[0],
