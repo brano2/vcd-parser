@@ -9,3 +9,4 @@ __pycache__/
 # Testing
 .coverage
 htmlcov/
+.tox/
