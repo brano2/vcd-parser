@@ -26,5 +26,8 @@ setup(
     packages=find_packages(exclude=('tests',)),
     include_package_data=True,
     install_requires=(BASEDIR/'requirements.txt').read_text().splitlines(),
+    extras_require={
+        'tests': (BASEDIR/'requirements-tests.txt').read_text().splitlines()
+    },
     zip_safe=False
 )
