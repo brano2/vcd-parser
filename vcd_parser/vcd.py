@@ -109,12 +109,12 @@ class VCD:
         if tokens[0] not in VAR_TYPES:
             warn(f"Unknown variable type '{tokens[0]}'. Should be one of: {VAR_TYPES}")
         self.vars[tokens[2]] = dict(scope_type=self._current_scope_type,
-                                     scope=self._current_scope,
-                                     type=tokens[0],
-                                     size=int(tokens[1]),
-                                     id=tokens[2],
-                                     name=tokens[3],
-                                     vals=[], timestamps=[])
+                                    scope=self._current_scope,
+                                    type=tokens[0],
+                                    size=int(tokens[1]),
+                                    id=tokens[2],
+                                    name=tokens[3],
+                                    vals=[], timestamps=[])
 
     def _parse_enddefinitions(self):
         token = next(self._token_stream)
